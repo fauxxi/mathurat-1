@@ -59,6 +59,7 @@ export class DbService {
       ]
     };
 
+    
     this.storage.set('obj', dbObject);
 
   }
