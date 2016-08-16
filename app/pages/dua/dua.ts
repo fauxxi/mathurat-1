@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 /*
   Generated class for the DuaPage page.
@@ -12,8 +12,31 @@ import { NavController } from 'ionic-angular';
 })
 export class DuaPage {
 
-  constructor(private navCtrl: NavController) {
-
+  dua: any;
+  constructor(private navCtrl: NavController, navParams: NavParams) {
+    this.dua = navParams.data;
+    console.log(this.dua);
+    if (this.dua === undefined) {
+    console.log('this.dua - undefined');
+      this.dua = {
+        'id': 1,
+        'name': 'Фатиха',
+        'audio': '01-fatiha.mp3',
+        'ayats': [
+          {
+            'arab': 'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيمِ',
+            'translit': 'БисмиЛ-ляаhир-рахмаанир-рахиим',
+            'rus': 'Во имя Аллаха Милостивого, Милосердного,'
+          },
+          {
+            'arab': 'الْحَمْدُ للّهِ رَبِّ الْعَالَمِينَ ',
+            'translit': 'Альхамду ли Лляаhи Раббиль-’аалямиин',
+            'rus': 'Слава Аллаху,Владыке всех миров,'
+          }
+        ]
+      };
+    }
   }
+
 
 }

@@ -1,30 +1,37 @@
 import {Component, ViewChild} from '@angular/core';
 import {ionicBootstrap, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
-import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
-import {ListPage} from './pages/list/list';
+//import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
+//import {ListPage} from './pages/list/list';
+import {DuaListPage} from './pages/dua-list/dua-list';
+import {InfoPage} from './pages/info/info';
+import {DuaPage} from './pages/dua/dua';
+import {DbService} from './providers/db-service/db-service';
 
 
 @Component({
-  templateUrl: 'build/app.html'
+  templateUrl: 'build/app.html',
+  providers: [DbService]
 })
 class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage: any = HelloIonicPage;
+  rootPage: any = DuaPage;
   pages: Array<{title: string, component: any}>;
+ // dbService: any;
 
   constructor(
     public platform: Platform,
-    public menu: MenuController
+    public menu: MenuController,
+    dbService: DbService
   ) {
     this.initializeApp();
-
+    // this.dbService = dbService;
     // set our app's pages
     this.pages = [
-      { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage }
+      { title: 'Молитвы', component: DuaListPage },
+      { title: 'Информация', component: InfoPage }
     ];
   }
 
