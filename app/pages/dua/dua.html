@@ -36,7 +36,12 @@
     </span>
   </div>
 
- 
+    <ion-row class='label'>
+     <button>Перевод</button>
+    </ion-row>
+    <ion-row *ngFor="let ayat of dua.ayats">
+     {{ayat.rus}}
+    </ion-row>
 
 
   {{dua.audio}}
