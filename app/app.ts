@@ -1,8 +1,8 @@
 import {Component, ViewChild} from '@angular/core';
 import {ionicBootstrap, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
-//import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
-//import {ListPage} from './pages/list/list';
+// import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
+// import {ListPage} from './pages/list/list';
 import {DuaListPage} from './pages/dua-list/dua-list';
 import {InfoPage} from './pages/info/info';
 import {DuaPage} from './pages/dua/dua';
@@ -17,7 +17,7 @@ class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage: any = DuaPage;
+  rootPage: any = DuaListPage;
   pages: Array<{title: string, component: any}>;
  // dbService: any;
 

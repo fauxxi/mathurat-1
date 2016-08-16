@@ -1,3 +1,48 @@
 .dua {
 
+    scroll-content {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+     //   align-content: stretch !important;
+        align-items: center !important;
+        background-image: url(../../../img/bg.png);
+        background-size: cover;
+        background-position: center;
+        padding-top: 0vh;
+        padding-bottom: 1vh;
+        flex-wrap:  wrap;
+    }
+    
+    button {
+        background: orange;
+        margin-left: 3vw;
+        height: 4vh;
+    }
+
+    .arabic {
+        align-self: flex-end;
+        direction: rtl; 
+    }
+    .bismillah {
+        flex: 40;
+        flex-shrink:2;
+        margin-top: 0vh !important;
+        background-image: url(../../../img/bismillah.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100vw;
+    }
+
+    ion-row {
+        flex: 10;
+        margin-left: 16vw;
+        margin-right: 12vw;
+        margin-top: 3px;
+    }
+    .label {
+        margin-top: 20px;
+        flex: 20;
+    }
 }

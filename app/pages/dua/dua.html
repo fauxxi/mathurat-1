@@ -16,6 +16,40 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class='dua'>
+
+<ion-row class="bismillah" >
+        <ion-col>
+        </ion-col>
+</ion-row>
+
+ 
+    <ion-row *ngFor="let ayat of dua.ayats" class='arabic'>
+     {{ayat.arab}}
+    </ion-row>
+  
+
+
+
+  
+    <ion-row class='label'>
+     <button>Транскрипция</button>
+    </ion-row>
+    <ion-row *ngFor="let ayat of dua.ayats">
+     {{ayat.translit}}
+    </ion-row>
+
+
+
+
+    <ion-row class='label'>
+     <button>Перевод</button>
+    </ion-row>
+    <ion-row *ngFor="let ayat of dua.ayats">
+     {{ayat.rus}}
+    </ion-row>
+
+
+
 {{dua.audio}}
 </ion-content>

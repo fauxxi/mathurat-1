@@ -14,11 +14,12 @@ export class DuaPage {
 
   dua: any;
   constructor(private navCtrl: NavController, navParams: NavParams) {
-    this.dua = navParams.data;
-    console.log(this.dua);
-    if (this.dua === undefined) {
-    console.log('this.dua - undefined');
-      this.dua = {
+  //  console.log(navParams.data.length);
+  //  if (navParams.data) {
+       this.dua = navParams.data.dua;
+  //  } else {
+  //    console.log('this.dua - undefined');
+  /*    this.dua = {
         'id': 1,
         'name': 'Фатиха',
         'audio': '01-fatiha.mp3',
@@ -36,6 +37,10 @@ export class DuaPage {
         ]
       };
     }
+  */  
+
+    console.log(this.dua);
+    console.log(this.dua.id);
   }
 
 

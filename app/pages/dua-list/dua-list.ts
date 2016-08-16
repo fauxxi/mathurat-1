@@ -13,15 +13,16 @@ import {DbService} from '../../providers/db-service/db-service';
   templateUrl: 'build/pages/dua-list/dua-list.html',
 })
 export class DuaListPage {
-  duaList: any;
+  duaList: Array<{}>;
   dbService: any;
   constructor(private navCtrl: NavController, dbService: DbService) {
     this.dbService = dbService;
-    this.dbService.getList().then((list) => {
-      console.log('list=', list);
-      if (list !== undefined) {
-        this.duaList = list;
-      }
+    this.dbService.getList().then((obj) => {
+      console.log('list=');
+      console.log(JSON.parse(obj));
+      if (obj) {
+            this.duaList = JSON.parse(obj).list;
+        }
     });
   }
 
