@@ -16,10 +16,10 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="container">
   <ion-list>
-    <button ion-item *ngFor="let dua of duaList" (click)="duaTapped($event, dua)">
+    <div *ngFor="let dua of duaList" (click)="duaTapped($event, dua)" style="background-color: transparent;">
       {{dua.name}}
-    </button>
+    </div>
   </ion-list>
 </ion-content>

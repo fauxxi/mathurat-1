@@ -18,38 +18,27 @@
 
 <ion-content padding class='dua'>
 
-<ion-row class="bismillah" >
-        <ion-col>
-        </ion-col>
-</ion-row>
+  <div class="bismillah">
+  </div>
+  <audio src="../../../audio/audio_0.mp3" controls></audio>
+
+  <div class='arabic'>
+    <span *ngFor="let ayat of dua.ayats">
+      <br>  {{ayat.arab}}
+    </span>
+  </div>
+
+
+    <button class='label'>Транскрипция</button>
+  <div>
+    <span *ngFor="let ayat of dua.ayats">
+      <br> {{ayat.translit}}
+    </span>
+  </div>
 
  
-    <ion-row *ngFor="let ayat of dua.ayats" class='arabic'>
-     {{ayat.arab}}
-    </ion-row>
-  
 
 
+  {{dua.audio}}
 
-  
-    <ion-row class='label'>
-     <button>Транскрипция</button>
-    </ion-row>
-    <ion-row *ngFor="let ayat of dua.ayats">
-     {{ayat.translit}}
-    </ion-row>
-
-
-
-
-    <ion-row class='label'>
-     <button>Перевод</button>
-    </ion-row>
-    <ion-row *ngFor="let ayat of dua.ayats">
-     {{ayat.rus}}
-    </ion-row>
-
-
-
-{{dua.audio}}
 </ion-content>

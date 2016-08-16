@@ -4,7 +4,6 @@
         display: flex !important;
         flex-direction: column !important;
         justify-content: flex-start !important;
-     //   align-content: stretch !important;
         align-items: center !important;
         background-image: url(../../../img/bg.png);
         background-size: cover;
@@ -12,6 +11,7 @@
         padding-top: 0vh;
         padding-bottom: 1vh;
         flex-wrap:  wrap;
+        font-size: 3vh;
     }
     
     button {
@@ -23,6 +23,8 @@
     .arabic {
         align-self: flex-end;
         direction: rtl; 
+        margin-left: 16vw;
+        margin-right: 12vw;
     }
     .bismillah {
         flex: 40;
