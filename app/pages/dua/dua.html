@@ -20,30 +20,40 @@
 
   <div class="bismillah">
   </div>
-  <audio src="../../../audio/audio_0.mp3" controls></audio>
+ 
+  
 
   <div class='arabic'>
     <span *ngFor="let ayat of dua.ayats">
-      <br>  {{ayat.arab}}
+      <br> - {{ayat.arab}}
     </span>
   </div>
 
-
-    <button class='label'>Транскрипция</button>
-  <div>
+  <div style="margin-left:10px;">
+   <br>
+    <audio [src]= 'dua.audio' controls></audio>
+  </div>
+  
+ <div class='label'>
+  <button (click)="rewertTraslate()">Перевод</button>
+  </div>
+  <div *ngIf="traslateShow" class='text'>
     <span *ngFor="let ayat of dua.ayats">
-      <br> {{ayat.translit}}
+      <br> - {{ayat.rus}}
     </span>
   </div>
 
-    <ion-row class='label'>
-     <button>Перевод</button>
-    </ion-row>
-    <ion-row *ngFor="let ayat of dua.ayats">
-     {{ayat.rus}}
-    </ion-row>
 
+  <div class='label'>
+  <button (click)="rewertTrascription()">Транскрипция</button>
+  </div>
+  <div *ngIf="trascriptionShow" class='text'>
+    <span *ngFor="let ayat of dua.ayats">
+      <br> - {{ayat.translit}}
+    </span>
+  </div>
 
-  {{dua.audio}}
+ 
 
+ 
 </ion-content>

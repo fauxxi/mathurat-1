@@ -10,41 +10,55 @@
         background-position: center;
         padding-top: 0vh;
         padding-bottom: 1vh;
-        flex-wrap:  wrap;
+      //  flex-wrap:  wrap;
         font-size: 3vh;
     }
     
-    button {
-        background: orange;
-        margin-left: 3vw;
-        height: 4vh;
-    }
-
-    .arabic {
-        align-self: flex-end;
-        direction: rtl; 
-        margin-left: 16vw;
-        margin-right: 12vw;
-    }
     .bismillah {
-        flex: 40;
-        flex-shrink:2;
+       // flex: 40;
+        flex-shrink:20;
         margin-top: 0vh !important;
         background-image: url(../../../img/bismillah.png);
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
-        width: 100vw;
+        width: 80vw;
+    //    height: 70px;
+       // z-index: 3;
+       min-height: 70px;
     }
 
-    ion-row {
-        flex: 10;
-        margin-left: 16vw;
-        margin-right: 12vw;
-        margin-top: 3px;
+
+    .arabic {
+        align-self: flex-end;
+        direction: rtl; 
+       // margin-top: 3vh;
+        margin-left: 8vw;
+        margin-right: 8vw;
+        font-size: 22px;
     }
+
+    button {
+        background: orange;
+        margin-left: 3vw;
+        height: 5vh;
+    }
+    .text span {
+        padding-top: 5px;
+    }
+    .text {
+        margin-left: 8vw;
+        margin-right: 8vw;
+        margin-top: 13px;
+        font-size: 2.5vh;
+    }
+
+   
     .label {
         margin-top: 20px;
-        flex: 20;
+        height: 3vh;
+        position: left;
+        align-self: left;
+      //  z-index: 3;
     }
 }

@@ -13,35 +13,20 @@ import { NavController, NavParams } from 'ionic-angular';
 export class DuaPage {
 
   dua: any;
+  trascriptionShow: boolean;
+  traslateShow: boolean;
   constructor(private navCtrl: NavController, navParams: NavParams) {
-  //  console.log(navParams.data.length);
-  //  if (navParams.data) {
-       this.dua = navParams.data.dua;
-  //  } else {
-  //    console.log('this.dua - undefined');
-  /*    this.dua = {
-        'id': 1,
-        'name': 'Фатиха',
-        'audio': '01-fatiha.mp3',
-        'ayats': [
-          {
-            'arab': 'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيمِ',
-            'translit': 'БисмиЛ-ляаhир-рахмаанир-рахиим',
-            'rus': 'Во имя Аллаха Милостивого, Милосердного,'
-          },
-          {
-            'arab': 'الْحَمْدُ للّهِ رَبِّ الْعَالَمِينَ ',
-            'translit': 'Альхамду ли Лляаhи Раббиль-’аалямиин',
-            'rus': 'Слава Аллаху,Владыке всех миров,'
-          }
-        ]
-      };
-    }
-  */  
-
-    console.log(this.dua);
-    console.log(this.dua.id);
+    this.trascriptionShow = true;
+    this.traslateShow = true;
+    this.dua = navParams.data.dua;
   }
 
+  rewertTrascription() {
+    this.trascriptionShow = !this.trascriptionShow;
+  }
+
+  rewertTraslate() {
+    this.traslateShow = !this.traslateShow;
+  }
 
 }

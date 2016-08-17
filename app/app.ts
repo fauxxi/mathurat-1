@@ -18,20 +18,22 @@ class MyApp {
 
   // make HelloIonicPage the root (or first) page
   rootPage: any = DuaListPage;
-  pages: Array<{title: string, component: any}>;
- // dbService: any;
+  pages: Array<{ title: string, component: any, logo: string }>;
+  // dbService: any;
+  isBusy: boolean;
 
   constructor(
     public platform: Platform,
     public menu: MenuController,
     dbService: DbService
   ) {
+    this.isBusy = true;
     this.initializeApp();
     // this.dbService = dbService;
     // set our app's pages
     this.pages = [
-      { title: 'Молитвы', component: DuaListPage },
-      { title: 'Информация', component: InfoPage }
+      { title: 'Молитвы', component: DuaListPage, logo: 'book' },
+      { title: 'Информация', component: InfoPage, logo: 'information-circle' }
     ];
   }
 
@@ -40,6 +42,7 @@ class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
+      this.isBusy = false;
     });
   }
 

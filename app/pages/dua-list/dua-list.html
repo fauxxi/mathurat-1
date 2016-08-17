@@ -17,9 +17,14 @@
 
 
 <ion-content padding class="container">
-  <ion-list>
-    <div *ngFor="let dua of duaList" (click)="duaTapped($event, dua)" style="background-color: transparent;">
-      {{dua.name}}
+
+    <div *ngIf='isBusy' class="spinner_container busy">
+        <div class="backdrop"><ion-spinner></ion-spinner></div>
     </div>
+
+  <ion-list>
+    <ion-item *ngFor="let dua of duaList" (click)="duaTapped($event, dua)" style="text-align: center!important; background-color: transparent;">
+      {{dua.name}}
+    </ion-item>
   </ion-list>
 </ion-content>

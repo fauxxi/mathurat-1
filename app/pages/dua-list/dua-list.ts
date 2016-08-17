@@ -15,14 +15,18 @@ import {DbService} from '../../providers/db-service/db-service';
 export class DuaListPage {
   duaList: Array<{}>;
   dbService: any;
+  isBusy: boolean;
+
   constructor(private navCtrl: NavController, dbService: DbService) {
     this.dbService = dbService;
+    this.isBusy = true;
     this.dbService.getList().then((obj) => {
       console.log('list=');
       console.log(JSON.parse(obj));
       if (obj) {
             this.duaList = JSON.parse(obj).list;
         }
+      this.isBusy = false;
     });
   }
 
