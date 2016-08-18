@@ -16,8 +16,8 @@ export class DuaPage {
   trascriptionShow: boolean;
   traslateShow: boolean;
   constructor(private navCtrl: NavController, navParams: NavParams) {
-    this.trascriptionShow = true;
-    this.traslateShow = true;
+    this.trascriptionShow = false;
+    this.traslateShow = false;
     this.dua = navParams.data.dua;
   }
 

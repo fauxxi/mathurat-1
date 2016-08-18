@@ -13,7 +13,7 @@
 
 
  scroll-content {
-        background-image: url(../../../img/bg_intro.png);
+        background-image: url(/build/img/bg_intro.png);
         background-size: cover;
         background-position: center;
  }
@@ -41,7 +41,7 @@
        // width: 25vh;
        height: 92px !important;
         align-self: center;
-        background-image: url(../../../img/appicon.png);
+        background-image: url("/build/img/appicon.png");
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
@@ -110,7 +110,7 @@
   .backdrop {
     opacity: 0.01;
     transition: opacity 0.2s;
-    background-image: url(../../../img/splash.png) !important;
+    background-image: url("/build/img/splash.png") !important;
     background-size: cover;
     background-position: center;
     width: 100vw;
