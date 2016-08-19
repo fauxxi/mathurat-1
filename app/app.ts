@@ -7,10 +7,12 @@ import {DuaListPage} from './pages/dua-list/dua-list';
 import {InfoPage} from './pages/info/info';
 import {DuaPage} from './pages/dua/dua';
 import {DbService} from './providers/db-service/db-service';
+// import {AudioProvider} from 'ionic-audio/dist/ionic-audio';
 
 
 @Component({
   templateUrl: 'build/app.html',
+  // providers: [DbService, AudioProvider]
   providers: [DbService]
 })
 class MyApp {

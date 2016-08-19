@@ -36,9 +36,11 @@ var tslint = require('ionic-gulp-tslint');
 
 var isRelease = argv.indexOf('--release') > -1;
 
+
+
 gulp.task('watch', ['clean'], function(done){
   runSequence(
-    ['sass', 'html', 'fonts', 'scripts'],
+    ['sass', 'html', 'fonts', 'assets', 'audio',  'scripts'],
     function(){
       gulpWatch('app/**/*.scss', function(){ gulp.start('sass'); });
       gulpWatch('app/**/*.html', function(){ gulp.start('html'); });
@@ -49,7 +51,7 @@ gulp.task('watch', ['clean'], function(done){
 
 gulp.task('build', ['clean'], function(done){
   runSequence(
-    ['sass', 'html', 'fonts', 'scripts'],
+    ['sass', 'html', 'fonts','assets', 'audio',  'scripts'],
     function(){
       buildBrowserify({
         minify: isRelease,
@@ -62,6 +64,16 @@ gulp.task('build', ['clean'], function(done){
       }).on('end', done);
     }
   );
+});
+
+gulp.task("assets", function() {
+    return gulp.src(["app/assets/img/*"])
+        .pipe(gulp.dest("www/build/img"));
+});
+
+gulp.task("audio", function() {
+    return gulp.src(["app/assets/audio/*"])
+        .pipe(gulp.dest("www/build/audio"));
 });
 
 gulp.task('sass', buildSass);

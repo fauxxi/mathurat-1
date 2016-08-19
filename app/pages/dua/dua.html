@@ -25,16 +25,30 @@
 
   <div class='arabic'>
     <span *ngFor="let ayat of dua.ayats">
-      <br> - {{ayat.arab}}
+      <img src="build/img/1.png"> {{ayat.arab}}
     </span>
   </div>
 
-  <div style="margin-left:10px;">
+
+  <div class='audio '>
    <br>
     <audio [src]= 'dua.audio' controls></audio>
+
+   <audio-track #audio  [track]="track" >
+    <ion-item>  
+      <ion-thumbnail item-left>
+        <img src="{{track.art}}">
+        <audio-track-play dark [audioTrack]="audio"><ion-spinner></ion-spinner></audio-track-play>  
+      </ion-thumbnail>
+      
+      <p><strong>{{audio.title}}</strong> ⚬ <em>{{audio.artist}}</em></p>
+      <audio-track-progress-bar dark duration progress [audioTrack]="audio" [ngStyle]="{visibility: audio.completed > 0 ? 'visible' : 'hidden'}"></audio-track-progress-bar>
+    </ion-item>    
+  </audio-track>
+
   </div>
   
- <div class='label'>
+<div class='label'>
   <button (click)="rewertTraslate()">Перевод</button>
   </div>
   <div *ngIf="traslateShow" class='text'>

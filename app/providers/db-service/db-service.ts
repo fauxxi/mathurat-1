@@ -23,7 +23,7 @@ export class DbService {
         {
           'id': 1,
           'name': 'Аль-Фатиха [Открывающиая] (1-7)',
-          'audio': '../../../audio/audio_1.mp3',
+          'audio': 'build/audio/audio_1.mp3',
           'ayats': [
             {
               'arab': 'أَعُوذُ بِاللهِ مِنَ الشَّيْطَانِ الرَّجِيمِ',
