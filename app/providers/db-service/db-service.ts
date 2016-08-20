@@ -23,8 +23,8 @@ export class DbService {
         {
           'id': 1,
           'name': 'Аль-Фатиха [Открывающиая] (1-7)', 
-         // 'audio': 'build/audio/audio_1.mp3',
-         'audio': 'https://archive.org/download/JM2013-10-05.flac16/V0/jm2013-10-05-t12-MP3-V0.mp3',
+          'audio': 'build/audio/audio_1.mp3',
+         // 'audio': 'https://archive.org/download/JM2013-10-05.flac16/V0/jm2013-10-05-t12-MP3-V0.mp3',
           'ayats': [
             {
               'arab': 'أَعُوذُ بِاللهِ مِنَ الشَّيْطَانِ الرَّجِيمِ',
@@ -115,7 +115,7 @@ export class DbService {
         {
           'id': 3,
           'name': 'Аль-Баккара [Корова] (255-257)',
-          'audio': 'build/audio/audio_3.mp3',
+          'audio': '../../build/audio/audio_3.mp3',
           'ayats': [
             {
               'arab': 'اللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ',

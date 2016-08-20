@@ -1,14 +1,14 @@
 import {Component, ViewChild} from '@angular/core';
 import {ionicBootstrap, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
-// import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
-// import {ListPage} from './pages/list/list';
 import {DuaListPage} from './pages/dua-list/dua-list';
 import {InfoPage} from './pages/info/info';
 import {DuaPage} from './pages/dua/dua';
+import {VotePage} from './pages/vote/vote';
 import {DbService} from './providers/db-service/db-service';
 import {AudioProvider, WebAudioProvider} from 'ionic-audio/dist/ionic-audio';
 import {Type, provide} from '@angular/core';
+
 
 @Component({
   templateUrl: 'build/app.html',
@@ -35,7 +35,8 @@ class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Молитвы', component: DuaListPage, logo: 'book' },
-      { title: 'Информация', component: InfoPage, logo: 'information-circle' }
+      { title: 'Информация', component: InfoPage, logo: 'information-circle' },
+      { title: 'Оценить', component: VotePage, logo: 'thumbs-up' }
     ];
   }
 

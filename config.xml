@@ -5,6 +5,8 @@
   <author email="ansaril3g@gmail.com" href="http://medicine-live.ru/">Ansar Z</author>
   <content src="index.html"/>
   <access origin="*"/>
+  <access origin="market:*" launch-external="yes"/>
+  <access origin="itms-apps:*" launch-external="yes"/>
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
   <allow-intent href="tel:*"/>
