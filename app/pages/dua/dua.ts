@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Provider } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-//import {AudioTrackComponent, AudioTrackPlayComponent, AudioTrackProgressComponent, AudioTrackProgressBarComponent, AudioTimePipe, AudioProvider} from 'ionic-audio/dist/ionic-audio';
+import {AudioTrackComponent, AudioTrackPlayComponent, AudioTrackProgressComponent, AudioTrackProgressBarComponent, AudioTimePipe, AudioProvider} from 'ionic-audio/dist/ionic-audio';
+// import { MediaPlugin } from 'ionic-native';
 
 /*
   Generated class for the DuaPage page.
@@ -10,27 +11,36 @@ import { NavController, NavParams } from 'ionic-angular';
 */
 @Component({
   templateUrl: 'build/pages/dua/dua.html',
- // directives: [AudioTrackComponent, AudioTrackPlayComponent, AudioTrackProgressComponent, AudioTrackProgressBarComponent],
+  directives: [AudioTrackComponent, AudioTrackPlayComponent, AudioTrackProgressComponent, AudioTrackProgressBarComponent],
   providers: [] 
 })
 export class DuaPage {
-  track: any;
+  singleTrack: any;
   dua: any;
   trascriptionShow: boolean;
   traslateShow: boolean;
-  constructor(private navCtrl: NavController, navParams: NavParams) {
+  file: any;
+
+  constructor(private navCtrl: NavController, navParams: NavParams, private _audioProvider: AudioProvider) {
     this.trascriptionShow = false;
     this.traslateShow = false;
     this.dua = navParams.data.dua;
-
-    this.track = {
-      src: 'build/audio/audio_1.mp3',
+    this.singleTrack = {
+      src: this.dua.audio,
       artist: 'Quran',
-      title: 'Аль-Фатиха',
-      art: 'build/img/1.png',
+      title: this.dua.name,
+      art: 'build/img/quran.png', 
+   //   art: 'https://themuslimtimesdotinfodotcom.files.wordpress.com/2013/10/quran-4.png', 
+   //   art: 'http://up.ariabax.ir/up/ariabaxx/forum/HolyQuran_icon96.png',
       preload: 'metadata' // tell the plugin to preload metadata such as duration for this track, set to 'none' to turn off
     };
+
+ //   this.file = new MediaPlugin('build/audio/audio_4.mp3');
+ //   this.file.play();
   }
+
+  
+
 
   rewertTrascription() {
     this.trascriptionShow = !this.trascriptionShow;

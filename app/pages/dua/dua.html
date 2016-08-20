@@ -30,30 +30,14 @@
   </div>
 
 
-  <div class='audio '>
-   <br>
-    <audio [src]= 'dua.audio' controls></audio>
 
-   <audio-track #audio  [track]="track" >
-    <ion-item>  
-      <ion-thumbnail item-left>
-        <img src="{{track.art}}">
-        <audio-track-play dark [audioTrack]="audio"><ion-spinner></ion-spinner></audio-track-play>  
-      </ion-thumbnail>
-      
-      <p><strong>{{audio.title}}</strong> ⚬ <em>{{audio.artist}}</em></p>
-      <audio-track-progress-bar dark duration progress [audioTrack]="audio" [ngStyle]="{visibility: audio.completed > 0 ? 'visible' : 'hidden'}"></audio-track-progress-bar>
-    </ion-item>    
-  </audio-track>
-
-  </div>
   
 <div class='label'>
   <button (click)="rewertTraslate()">Перевод</button>
   </div>
   <div *ngIf="traslateShow" class='text'>
     <span *ngFor="let ayat of dua.ayats">
-      <br> - {{ayat.rus}}
+     <img src="build/img/1.png"> {{ayat.rus}}
     </span>
   </div>
 
@@ -63,11 +47,31 @@
   </div>
   <div *ngIf="trascriptionShow" class='text'>
     <span *ngFor="let ayat of dua.ayats">
-      <br> - {{ayat.translit}}
+      <img src="build/img/1.png"> {{ayat.translit}}
     </span>
   </div>
 
- 
+   <div class='audio '>
+   <br>
+    <audio-track #track [track]="singleTrack">
+    <ion-item [audioTrack]="track">
+      <ion-thumbnail item-left>
+        <img src="{{track.art}}">
+        <audio-track-play dark [audioTrack]="track">
+          <ion-spinner></ion-spinner>
+        </audio-track-play>
+      </ion-thumbnail>
+
+  <div item-content style="width:80%">
+    <h2 style="margin-top: 10px;">{{track.title}}</h2>
+    <audio-track-progress-bar duration progress [audioTrack]="track"></audio-track-progress-bar>
+    
+  </div>
+
+
+    </ion-item>
+  </audio-track>
+  </div>
 
  
 </ion-content>

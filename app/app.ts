@@ -7,8 +7,8 @@ import {DuaListPage} from './pages/dua-list/dua-list';
 import {InfoPage} from './pages/info/info';
 import {DuaPage} from './pages/dua/dua';
 import {DbService} from './providers/db-service/db-service';
-// import {AudioProvider} from 'ionic-audio/dist/ionic-audio';
-
+import {AudioProvider, WebAudioProvider} from 'ionic-audio/dist/ionic-audio';
+import {Type, provide} from '@angular/core';
 
 @Component({
   templateUrl: 'build/app.html',
@@ -56,4 +56,6 @@ class MyApp {
   }
 }
 
-ionicBootstrap(MyApp);
+ionicBootstrap(MyApp, [provide(AudioProvider,  { useFactory: AudioProvider.factory })], {
+  // tabbarPlacement: 'bottom'
+});

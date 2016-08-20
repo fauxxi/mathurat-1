@@ -23,8 +23,8 @@
     </div>
 
   <ion-list>
-    <ion-item *ngFor="let dua of duaList" (click)="duaTapped($event, dua)" style="text-align: center!important; background-color: transparent;">
+    <button clear round full medium *ngFor="let dua of duaList" (click)="duaTapped($event, dua)" style="color: black;">
       {{dua.name}}
-    </ion-item>
+    </button>
   </ion-list>
 </ion-content>
