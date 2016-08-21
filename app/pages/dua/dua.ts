@@ -20,15 +20,16 @@ export class DuaPage {
   trascriptionShow: boolean;
   traslateShow: boolean;
   file: any;
-  platform: any;
+ // platform: any;
 
-  constructor(private navCtrl: NavController, navParams: NavParams, private _audioProvider: AudioProvider, platform: Platform) {
+  constructor(private navCtrl: NavController, navParams: NavParams, private _audioProvider: AudioProvider) {
     this.trascriptionShow = false;
     this.traslateShow = false;
   //  this.file = file;
     this.dua = navParams.data.dua;
+    let dua_audio = navParams.data.dua_audio;
     this.singleTrack = {
-        src: '',
+        src: dua_audio,
         artist: 'Quran',
         title: this.dua.name,
         art: 'build/img/quran.png',
@@ -36,10 +37,7 @@ export class DuaPage {
         //   art: 'http://up.ariabax.ir/up/ariabaxx/forum/HolyQuran_icon96.png',
         preload: 'metadata' // tell the plugin to preload metadata such as duration for this track, set to 'none' to turn off
       };
-    this.platform = platform;
-    this.platform.ready().then(() => {
-      this.singleTrack.src = this.getPhoneGapPath(this.dua.audio);
-    });
+  
 
 
 
@@ -59,26 +57,7 @@ export class DuaPage {
     this.traslateShow = !this.traslateShow;
   }
 
-  getPhoneGapPath(audio: string) {
-    var path = window.location.pathname;
-    console.log('path=', path);
-    var sizefilename = path.length - (path.lastIndexOf('/') + 1);
-    path = path.substr(0, path.length - sizefilename);
-    
-
-    if (this.platform.is('android')) {
-      path = '/android_asset/' + audio;
-    } else {
-      path = path + audio;
-    }
-
-    // var path = this.file.getDirectory();
-
-    //  path = path.toString();
-    //  path = path.substr(0, path.length - 10 );
-    console.log('path=', path);
-    return path;
-  };
+  
 
 
 }
