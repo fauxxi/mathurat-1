@@ -51,8 +51,10 @@ export class DuaListPage {
 
   getPhoneGapPath() {
     //  path = window.location.pathname;
-    let path = cordova.file.documentsDirectory; 
-
+    let path = cordova.file.applicationStorageDirectory; 
+     //   this.test = cordova.file.dataDirectory;   !!!!
+     //    this.test = cordova.file;
+     //    this.test = cordova.file.applicationStorageDirectory; !!!!!
     console.log('path=', path);
     let sizefilename = path.length - (path.lastIndexOf('/') + 1);
     path = path.substr(0, path.length - sizefilename);
@@ -60,9 +62,7 @@ export class DuaListPage {
 
     if (this.platform.is('android')) {
       path = '/android_asset/' ;
-    } else {
-   //   path = 
-    }
+    } 
     // var path = this.file.getDirectory();
     //  path = path.toString();
     //  path = path.substr(0, path.length - 10 );
