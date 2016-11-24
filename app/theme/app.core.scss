@@ -31,7 +31,11 @@
     align-content: stretch !important;
    
     
- 
+ .myBut{
+    background-color: #55acee;
+    color:white;
+    justify-content: flex-start !important;
+}
 
     .logo_image{
     //    flex: 60;

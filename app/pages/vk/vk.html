@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>vk.com/masjidru</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<div *ngIf='isBusy' class="spinner_container busy">
+  <div class="backdrop"></div>
+  <ion-spinner></ion-spinner>
+</div>
+
+<ion-content padding class="vk">
+
+ <ion-list>
+    <div *ngFor="let post of vkPosts">
+      <div *ngIf='post.text.length'>
+
+<ion-card  (click)="openPost(post)">
+
+  <ion-item>
+    <ion-avatar item-left>
+      <img src="build/img/masjid.jpg">
+    </ion-avatar>
+    <h2 style="color:#387ef5; text-decoration: none; font-weight: bold; font-size: 3.5vw;">Masjid - онлайн медресе</h2>
+    <p style=" font-size: 3vw;">{{post.date}}</p>
+  </ion-item>
+
+ <div *ngIf='post.attachments'>
+      <img [src]="post.preview" >
+ </div> 
+
+  <ion-card-content>
+    <div [innerHTML]="post.text"></div>
+     </ion-card-content>
+
+   <ion-row>
+    <ion-col width-20>
+      <button primary clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>{{post.likes.count}}</div>
+      </button>
+    </ion-col>
+
+
+
+    <ion-col width-20>
+      <button primary clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>{{post.comments.count}}</div>
+      </button>
+    </ion-col>
+
+    <ion-col text-right width-60>
+      <button primary clear small>
+        <ion-icon name="megaphone"></ion-icon>
+        <div>{{post.reposts.count}}</div>
+      </button>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
+
+      </div>
+    </div>
+</ion-list>
+
+
+  <div *ngIf='vkPosts.length' >
+    <button class="myBut" round block medium (click)="getVkPosts()"> Загрузить еще <ion-icon name="arrow-dropdown"></ion-icon></button>
+  </div>
+</ion-content>

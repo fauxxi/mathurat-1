@@ -40,13 +40,13 @@ export class VotePage {
           this.browser = InAppBrowser.open(this.url, '_system', 'location=yes');
         }
       } else {
-        this.url = 'itms-apps://itunes.apple.com/my/app/mathurat-hd/id874896846';
+        this.url = 'itms-apps://itunes.apple.com/my/app/mathurat_rus/1179780695';
         try {
           this.browser = InAppBrowser.open(this.url, '_system', 'location=yes');
         } catch (err) { 
-          this.url = 'https://itunes.apple.com/my/app/mathurat-hd/id874896846';
+          this.url = 'https://itunes.apple.com/my/app/mathurat_rus/1179780695';
           this.browser = InAppBrowser.open(this.url, '_system', 'location=yes');
-        }
+        } 
       }
 
     });
