@@ -245,13 +245,13 @@ export class DbService {
         },
         {
           'id': 16,
-          'name': 'Радыту билляhи',
+          'name': 'Радыйту билляхи',
           'audio': 'www/build/audio/audio_12.mp3',
           'image': 'build/img/s19.png',
           'ayats': [
             {
               'arab': 'رَضِيتُ بِاللَّهِ رَبًّا وَبِالْإِسْلاَمِ دِيناً وَبِمُحَمَّدٍ نَبِيّاً وَرَسُولاً ',
-              'translit': 'Радыту билляhи раббан уа биль-Ислаами диинан уа би Мухаммадин съаллаллааhу ‘аляйхи уа салпяма набиийан уа расулян',
+              'translit': 'Радыйту билляhи раббан уа биль-Ислаами диинан уа би Мухаммадин съаллаллааhу ‘аляйхи уа салпяма набиийан уа расулян',
               'rus': 'Доволен я Аллахом как Господом, Исламом - как религией и Мухаммадом, - как посланником!'
             }
           ]
@@ -259,7 +259,7 @@ export class DbService {
         },
         {
           'id': 17,
-          'name': 'Субхааналлаhи',
+          'name': 'Субхааналлахи',
           'audio': 'www/build/audio/audio_13.mp3',
           'image': 'build/img/s20.png',
           'ayats': [
@@ -273,7 +273,7 @@ export class DbService {
         },
         {
           'id': 18,
-          'name': 'Бисмил-ляяhиль-лязъии',
+          'name': 'Бисмил-ляяхиль-лязъии',
           'audio': 'www/build/audio/audio_14.mp3',
           'image': 'build/img/s21.png',
           'ayats': [
@@ -358,7 +358,7 @@ export class DbService {
         },
         {
           'id': 24,
-          'name': 'Покаяние#1 (Аллааhумма анта раббии)',
+          'name': 'Покаяние#1 (Аллаахумма анта раббии)',
           'audio': 'www/build/audio/audio_20.mp3',
           'image': 'build/img/s27.png',
           'ayats': [
@@ -372,7 +372,7 @@ export class DbService {
         },
         {
           'id': 25,
-          'name': 'Покаяние#2 (Астагъфирул-лaаh)',
+          'name': 'Покаяние#2 (Астагъфирул-лaах)',
           'audio': 'www/build/audio/audio_21.mp3',
           'image': 'build/img/s28.png',
           'ayats': [
@@ -387,7 +387,7 @@ export class DbService {
 
         {
           'id': 26,
-          'name': 'Покаяние#3 (Субхаанякял-лааhумма)',
+          'name': 'Покаяние#3 (Субхаанякял-лаахумма)',
           'audio': 'www/build/audio/audio_22.mp3',
           'image': 'build/img/s29.png',
           'ayats': [
