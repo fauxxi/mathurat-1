@@ -95,8 +95,7 @@ export class VkPostPage {
   openBrowser() {
     this.platform.ready().then(() => {
       let url = 'https://vk.com/wall-77334796_' + this.post.id;
-      this.browser = new InAppBrowser();
-      this.browser.open(url, '_system', 'location=yes');
+      this.browser = InAppBrowser.open(url, '_system', 'location=yes');
    });
   }
 

@@ -12,16 +12,15 @@ import { Storage, SqlStorage } from 'ionic-angular';
 @Injectable()
 export class DbService {
   storage: any;
-
+  dbObject: any;
   constructor() {
     this.storage = new Storage(SqlStorage);
     // this.storage.query('CREATE TABLE IF NOT EXISTS list (id INTEGER PRIMARY KEY AUTOINCREMENT, duaName TEXT)');
     //  this.storage.query('CREATE TABLE IF NOT EXISTS dua (id INTEGER PRIMARY KEY AUTOINCREMENT, duaId INTEGER, ayatNumber INTEGER, arab TEXT, rus TEXT, transcription TEXT)');
     //  this.initDb();
-    let dbObject = {
-      list: [
+    this.dbObject = [
         {
-          'id': 1,
+          'id': 0,
           'name': 'Аль-Фатиха (1-7)',
           'audio': 'www/build/audio/audio_1.mp3',
           'image': 'build/img/s01.png',
@@ -35,7 +34,7 @@ export class DbService {
 
         },
         {
-          'id': 2,
+          'id': 1,
           'name': 'Аль-Баккара (1-5)',
           'audio': 'www/build/audio/audio_2.mp3',
           'image': 'build/img/s02.png',
@@ -49,7 +48,7 @@ export class DbService {
         },
 
         {
-          'id': 3,
+          'id': 2,
           'name': 'Аль-Бакара (255-257)',
           'audio': 'www/build/audio/audio_3.mp3',
           'image': 'build/img/s03.png',
@@ -63,7 +62,7 @@ export class DbService {
 
         },
         {
-          'id': 4,
+          'id': 3,
           'name': 'Аль-Бакара (284-286)',
           'audio': 'www/build/audio/audio_4.mp3',
           'image': 'build/img/s05.png',
@@ -77,7 +76,7 @@ export class DbService {
 
         },
         {
-          'id': 5,
+          'id': 4,
           'name': 'Аль-Ихлас',
           'audio': 'www/build/audio/audio_5.mp3',
           'image': 'build/img/s07.png',
@@ -91,7 +90,7 @@ export class DbService {
 
         },
         {
-          'id': 6,
+          'id': 5,
           'name': 'Аль-Фаляк',
           'audio': 'www/build/audio/audio_6.mp3',
           'image': 'build/img/s08.png',
@@ -105,7 +104,7 @@ export class DbService {
 
         },
         {
-          'id': 7,
+          'id': 6,
           'name': 'Ан-Нас',
           'audio': 'www/build/audio/audio_7.mp3',
           'image': 'build/img/s09.png',
@@ -119,7 +118,7 @@ export class DbService {
 
         },
         {
-          'id': 8,
+          'id': 7,
           'name': 'Утренняя#1 (асбахнаа)',
           'audio': 'www/build/audio/audio_7a.mp3',
           'image': 'build/img/s10.png',
@@ -133,7 +132,7 @@ export class DbService {
 
         },
         {
-          'id': 9,
+          'id': 8,
           'name': 'Вечерняя#1 (амасайнаа)',
           'audio': 'www/build/audio/audio_7b.mp3',
           'image': 'build/img/s11.png',
@@ -147,7 +146,7 @@ export class DbService {
 
         },
         {
-          'id': 10,
+          'id': 9,
           'name': 'Утренняя#2 (асбахнаа)',
           'audio': 'www/build/audio/audio_8a.mp3',
           'image': 'build/img/s12.png',
@@ -161,7 +160,7 @@ export class DbService {
 
         },
         {
-          'id': 11,
+          'id': 10,
           'name': 'Вечерняя#2 (амасайнаа)',
           'audio': 'www/build/audio/audio_8b.mp3',
           'image': 'build/img/s13.png',
@@ -175,21 +174,21 @@ export class DbService {
 
         },
         {
-          'id': 12,
+          'id': 11,
           'name': 'Утренняя#3 (асбахнаа)',
           'audio': 'www/build/audio/audio_9a.mp3',
           'image': 'build/img/s14.png',
           'ayats': [
             {
               'arab': 'اللَّهُمَّ إِنِّي أَصْبَحْتُ مِنْكَ فِي نِعْمَةٍ وَعَافِيَةٍ وَسِتْرٍ فَأَتِّمَ عَلَيَّ نِعْمَتَكَ وَعَافِيَتَكَ وَسِتْرَكَ فِي الدُّنْيَا وَالآخِرَةِ ',
-              'translit': 'Аллаhумма инни асъбахту амсайту Минка фии ниъматин уа ‘аафийатин уа ситьрин фа атимма ‘алай-йа ниъматакя уа ‘аафийатикя уа ситьракя фид-дунья уаль-аахъираh',
+              'translit': 'Аллаhумма инни асъбахту Минка фии ниъматин уа ‘аафийатин уа ситьрин фа атимма ‘алай-йа ниъматакя уа ‘аафийатикя уа ситьракя фид-дунья уаль-аахъираh',
               'rus': 'О Аллах поистине я получил от тебя благодать (Ниг-мат), здоровье, покровительство. О Аллах ниспошли, дай мне полную, совершенную благодать, здоровье, покровительство в этой мирской жизни и в вечной жизни'
             }
           ]
 
         },
         {
-          'id': 13,
+          'id': 12,
           'name': 'Вечерняя#3 (амасайнаа)',
           'audio': 'www/build/audio/audio_9b.mp3',
           'image': 'build/img/s15.png',
@@ -203,7 +202,7 @@ export class DbService {
 
         },
         {
-          'id': 14,
+          'id': 13,
           'name': 'Утренняя#4 (асбахнаа)',
           'audio': 'www/build/audio/audio_10a.mp3',
           'image': 'build/img/s16.png',
@@ -217,7 +216,7 @@ export class DbService {
 
         },
         {
-          'id': 15,
+          'id': 14,
           'name': 'Вечерняя#4 (амасайнаа)',
           'audio': 'www/build/audio/audio_10b.mp3',
           'image': 'build/img/s17.png',
@@ -231,35 +230,35 @@ export class DbService {
 
         },
         {
-          'id': 16,
+          'id': 15,
           'name': 'Йаа Раббии',
           'audio': 'www/build/audio/audio_11.mp3',
           'image': 'build/img/s18.png',
           'ayats': [
             {
               'arab': 'يَا رَبِّي لَكَ الْحَمْدُ كَمَا يَنْبَغِي لِجَلاَلِ وَجْهِكَ وَعَظِيمِ سُلْطَانِكَ ',
-              'translit': 'Йаа Раббии Лякяль-хамду кямяя йамбагъии лиджалаали уаджhикя уа ъазъими сультъаани',
+              'translit': 'Йаа Раббии Лякяль-хамду кямяя йамбагъии лиджалаали уаджhикя уа ъазъими сультъааника',
               'rus': '0 Аллах хвала тебе, великому творцу и властителю миров (произносить трижды)'
             }
           ]
 
         },
         {
-          'id': 17,
+          'id': 16,
           'name': 'Радыту билляhи',
           'audio': 'www/build/audio/audio_12.mp3',
           'image': 'build/img/s19.png',
           'ayats': [
             {
               'arab': 'رَضِيتُ بِاللَّهِ رَبًّا وَبِالْإِسْلاَمِ دِيناً وَبِمُحَمَّدٍ نَبِيّاً وَرَسُولاً ',
-              'translit': 'Радыту билляhи раббан уа биль-Ислаами диинан уа би Мухаммадин съаллаллааhу ‘аляйхи уа салпяма набиийаа',
-              'rus': 'Доволен я Аллахом как Господом, Исламом - как религией и Мухаммадом, - как пророком!'
+              'translit': 'Радыту билляhи раббан уа биль-Ислаами диинан уа би Мухаммадин съаллаллааhу ‘аляйхи уа салпяма набиийан уа расулян',
+              'rus': 'Доволен я Аллахом как Господом, Исламом - как религией и Мухаммадом, - как посланником!'
             }
           ]
 
         },
         {
-          'id': 18,
+          'id': 17,
           'name': 'Субхааналлаhи',
           'audio': 'www/build/audio/audio_13.mp3',
           'image': 'build/img/s20.png',
@@ -273,7 +272,7 @@ export class DbService {
 
         },
         {
-          'id': 19,
+          'id': 18,
           'name': 'Бисмил-ляяhиль-лязъии',
           'audio': 'www/build/audio/audio_14.mp3',
           'image': 'build/img/s21.png',
@@ -287,7 +286,7 @@ export class DbService {
 
         },
         {
-          'id': 20,
+          'id': 19,
           'name': 'От ширка',
           'audio': 'www/build/audio/audio_15.mp3',
           'image': 'build/img/s22.png',
@@ -301,7 +300,7 @@ export class DbService {
 
         },
         {
-          'id': 21,
+          'id': 20,
           'name': 'От зла',
           'audio': 'www/build/audio/audio_16.mp3',
           'image': 'build/img/s23.png',
@@ -315,21 +314,21 @@ export class DbService {
 
         },
         {
-          'id': 22,
+          'id': 21,
           'name': 'От беспокойства',
           'audio': 'www/build/audio/audio_17.mp3',
           'image': 'build/img/s24.png',
           'ayats': [
             {
               'arab': 'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ وَالْعَجْزِ وَالْكَسَلِ وَالْبُخْلِ وَالْجُبْنِ وَأَعُوذُ بِكَ مِنْ غَلَبَةِ الدَّيْنِ وَقَهْرِ الرِّجَالِ ',
-              'translit': "Аллааhумма иннии А'уузъу бикя миналь-hамми уаль-хазан уа А'уузъу бикя миналь-'адж-зи уаль-касаль уа а'уузъу бикя миналь-джубни уапь-бухъль уа а'уузъу бикя мин гъалабатид-дайни уа къаhрир-риджяяль",
+              'translit': "Аллааhумма иннии А'уузъу бикя миналь-hамми уаль-хазан уа А'уузъу бикя миналь-'адж-зи уаль-касаль уа а'уузъу бикя миналь-джубни уаль-бухъль уа а'уузъу бикя мин гъалабатид-дайни уа къаhрир-риджяяль",
               'rus': 'О Аллах, поистине, я прибегаю к Тебе от беспокойства и грусти, слабости и нерадения, скупости и малодушия, бремени долга и от притеснения людей.'
             }
           ]
 
         },
         {
-          'id': 23,
+          'id': 22,
           'name': 'От болезни',
           'audio': 'www/build/audio/audio_18.mp3',
           'image': 'build/img/s25.png',
@@ -344,21 +343,21 @@ export class DbService {
 
         },
         {
-          'id': 24,
+          'id': 23,
           'name': 'От неверия',
           'audio': 'www/build/audio/audio_19.mp3',
           'image': 'build/img/s26.png',
           'ayats': [
             {
               'arab': 'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ وَالفَقْرِ وَأَعُوذُ بِكَ مِنْ عَذَابِ القَبْرِ لاَ إِلَهَ إِلاَّ أَنْتَ ',
-              'translit': "Аллаhумма инни а'уузъу бикя миналь-куф-ри уаль-факър, уа а'уузъу бикя мин ъазаабиль-къабр, Ляя иляяhа илляя Ант",
+              'translit': "Аллаhумма инни а'уузъу бикя миналь-куфри уаль-факър, уа а'уузъу бикя мин ъазаабиль-къабр, Ляя иляяhа илляя Ант",
               'rus': 'О Аллах, поистине, я прибегаю к Тебе от неверия и от бедности и я прибегаю к Тебе от мучений могилы, нет бога, кроме Тебя!'
             }
           ]
 
         },
         {
-          'id': 25,
+          'id': 24,
           'name': 'Покаяние#1 (Аллааhумма анта раббии)',
           'audio': 'www/build/audio/audio_20.mp3',
           'image': 'build/img/s27.png',
@@ -372,14 +371,14 @@ export class DbService {
 
         },
         {
-          'id': 26,
+          'id': 25,
           'name': 'Покаяние#2 (Астагъфирул-лaаh)',
           'audio': 'www/build/audio/audio_21.mp3',
           'image': 'build/img/s28.png',
           'ayats': [
             {
               'arab': 'أَسْتَغْفِرُ اللَّهَ الَّذِي لاَ إِلَهَ إِلاَّ هُوَ الْحَيُّ القَيّوُمُ وَأَتُوبُ إِلَيهِ ',
-              'translit': 'Астагъфирул-лaаhал-лязъии ляя иляяhа илляя hуаль Хай-йаль – Къай-йуума уа атуубу Иляйх',
+              'translit': 'Астагъфирул-лaаhал-азыма-льязии ляя иляяhа илляя hуаль Хай-юаль – Къайууму уа атуубу Иляйх',
               'rus': 'Прошу прощения у Аллаха Великого, помимо которого нет иного бога. Он - Живой, Вечносущий, и я приношу Ему своё покаяние!'
             }
           ]
@@ -387,7 +386,7 @@ export class DbService {
         },
 
         {
-          'id': 27,
+          'id': 26,
           'name': 'Покаяние#3 (Субхаанякял-лааhумма)',
           'audio': 'www/build/audio/audio_22.mp3',
           'image': 'build/img/s29.png',
@@ -400,10 +399,10 @@ export class DbService {
           ]
 
         }]
-    };
+    ;
 
 
-    this.storage.set('obj', JSON.stringify(dbObject));
+  //  this.storage.set('obj', JSON.stringify(this.dbObject));
 
   }
 
@@ -418,11 +417,13 @@ export class DbService {
   getList() {
     //   let sql = 'SELECT * FROM list';
     //   return this.storage.query(sql);
-    return this.storage.get('obj');
+    return this.dbObject;
   }
 
-  getDuaById(id) {
-    //   return this.storage.get('obj.list[1]');
+  getNextDuaById(id) {
+    id = id + 1;
+    if (id === 27) { id = 0; }
+    return this.dbObject[id];
   }
 
 

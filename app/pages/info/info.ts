@@ -15,33 +15,31 @@ export class InfoPage {
   mailText: any;
   platform: any;
   tmp: any;
+  email:any;
   constructor(public nav: NavController, platform: Platform) {
     this.mailText = "";
     this.platform = platform;
    // console.log("mail init");
-  }
-
-  sendMail() {
-   // console.log("test mail");
-    this.platform.ready().then(() => {
-      console.log("platform.ready");
-      this.tmp = EmailComposer.isAvailable().then((available: boolean) => {
-        console.log(available);
-        
-         // console.log(" mail available");
-          let email = {
+   this.email = {
             to: 'ansaril3g@gmail.com',
-
-         //   bcc: ['ansaril3g@gmail.com'],
             attachments: [],
-            subject: 'Приложение Al-Mathurat Rus',
+            subject: 'Al Mathurat Rus',
             body: this.mailText,
             isHtml: false
           };
+  }
 
-          // Send a text message using default options
-          EmailComposer.open(email);
-        
+
+  sendMail() {
+    console.log("test mail");
+    this.platform.ready().then(() => {
+      console.log("platform.ready");
+
+      EmailComposer.isAvailable().then((available: boolean) => {
+        console.log(available);
+        console.log("mail available");
+        EmailComposer.open(this.email);
+
       });
     });
 

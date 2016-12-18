@@ -11,13 +11,21 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>{{dua.name}}</ion-title>
+    <ion-buttons end>
+    <button (click)="goToNext()">
+      <ion-icon name="arrow-round-forward"></ion-icon>
+    </button>
+  </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding class='dua'>
-
+<div *ngIf='isBusy' class="spinner_container busy">
+        <div class="backdrop"><ion-spinner></ion-spinner></div>
+    </div>
+    
   <div class="bismillah">
   </div>
  
@@ -62,7 +70,7 @@
       </ion-thumbnail>
 
     <div item-content style="width:80%">
-     <h2 style="margin-top: 10px;">{{track.title}}</h2>
+     <h2 style="margin-top: 10px; width:50vw;">{{track.title}}</h2>
      <audio-track-progress-bar duration progress [audioTrack]="track"></audio-track-progress-bar>
     </div>
    </ion-item>

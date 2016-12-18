@@ -22,16 +22,17 @@ export class DuaListPage {
 
   constructor(private navCtrl: NavController, dbService: DbService, platform: Platform) {
     this.dbService = dbService;
-    this.isBusy = true;
+   // this.isBusy = true;
     this.platform = platform;
-    this.dbService.getList().then((obj) => {
+    this.duaList = this.dbService.getList();
+    /*this.dbService.getList().then((obj) => {
       console.log('list=');
       console.log(JSON.parse(obj));
       if (obj) {
         this.duaList = JSON.parse(obj).list;
       }
       this.isBusy = false;
-    });
+    });*/
   }
 
   duaTapped(event, dua) {
@@ -39,7 +40,8 @@ export class DuaListPage {
     this.platform.ready().then(() => {
       //   this.singleTrack.src = this.getPhoneGapPath(this.dua.audio);
       // dua.src = '/android_asset/www/build/audio/audio_1.mp3';
-      //let dua_audio =  dua.audio;
+     // let dua_audio =  dua.audio;
+
       let dua_audio = this.getPhoneGapPath() + dua.audio;
       console.log('dua audio=', dua_audio);
       this.navCtrl.push(DuaPage, {

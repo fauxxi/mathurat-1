@@ -1,6 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import {ionicBootstrap, Platform, MenuController, Nav} from 'ionic-angular';
-import {StatusBar} from 'ionic-native';
+import {StatusBar, Splashscreen } from 'ionic-native';
 import {DuaListPage} from './pages/dua-list/dua-list';
 import {InfoPage} from './pages/info/info';
 import {DuaPage} from './pages/dua/dua';
@@ -43,8 +43,18 @@ class MyApp {
     ];
   }
 
+  
+  hideSplashScreen() {
+    if (Splashscreen) {
+      setTimeout(() => {
+        Splashscreen.hide();
+      }, 600);
+    }
+  }
+
   initializeApp() {
     this.platform.ready().then(() => {
+      this.hideSplashScreen();
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
