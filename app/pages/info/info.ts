@@ -1,6 +1,6 @@
 import {NavController, Platform} from 'ionic-angular';
 import {Component} from '@angular/core';
-import { EmailComposer } from 'ionic-native';
+// import { EmailComposer } from 'ionic-native';
 
 /*
   Generated class for the InfoPage page.
@@ -31,7 +31,7 @@ export class InfoPage {
 
 
   sendMail() {
-    console.log("test mail");
+ /*   console.log("test mail");
     this.platform.ready().then(() => {
       console.log("platform.ready");
 
@@ -43,7 +43,7 @@ export class InfoPage {
       });
     });
 
-
+*/
   }
 
 }

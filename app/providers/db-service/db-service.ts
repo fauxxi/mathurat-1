@@ -35,7 +35,7 @@ export class DbService {
         },
         {
           'id': 1,
-          'name': 'Аль-Баккара (1-5)',
+          'name': 'Аль-Бакара (1-5)',
           'audio': 'www/build/audio/audio_2.mp3',
           'image': 'build/img/s02.png',
           'ayats': [

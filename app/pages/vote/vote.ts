@@ -32,11 +32,11 @@ export class VotePage {
     //   this.browser.open();
     this.platform.ready().then(() => {
       if (this.platform.is('android')) {
-        this.url = 'market://details?id=com.mathuratrus';
+        this.url = 'market://details?id=com.almathuratrus';
         try {
           this.browser = InAppBrowser.open(this.url, '_system', 'location=yes');
         } catch (err) {
-          this.url = 'https://play.google.com/store/apps/details?id=com.mathuratrus';
+          this.url = 'https://play.google.com/store/apps/details?id=com.almathuratrus';
           this.browser = InAppBrowser.open(this.url, '_system', 'location=yes');
         }
       } else {
